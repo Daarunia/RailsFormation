@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  # Arrival page
   root to: 'pages#welcome'
+  # Home page for testing URL route and how to use it 
   get '/home(/:username)', to: 'pages#home', as:'home'
-  get '/articles', to:'posts#index', as:'articles'
+  # Create CRUD with table posts 
+  resources :posts
 end
