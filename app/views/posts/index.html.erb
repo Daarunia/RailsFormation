@@ -6,7 +6,7 @@
     <p>
         <a href="<%= post_path(post.id) %>" class="btn btn-primary">Lire la suite</a>
         <a href="<%= edit_post_path(post.id) %>" class="btn btn-default">Modifier</a>
-        <%= form_with(model: @article, url: post_path(post.id), method: :delete, data: { confirm: "Êtes-vous sûr de vouloir supprimer cet article ?" }) do |form| %>
+        <%= form_with(model: @post, url: post_path(post.id), method: :delete, data: { turbo_confirm: "Êtes-vous sûr de vouloir supprimer cet article ?" }) do |form| %>
             <%= form.submit "Supprimer", class: "btn btn-danger" %>
         <% end %>
     </p>
